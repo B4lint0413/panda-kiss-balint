@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StorePandaRequest;
 use App\Http\Resources\PandaResource;
 use App\Models\Panda;
 use Illuminate\Http\Request;
@@ -42,5 +43,15 @@ class PandaController extends Controller
 
     public function show($id){
         return new PandaResource(Panda::findOrFail($id));
+    }
+
+    public function destroy($id){
+        Panda::findOrFail($id)->delete();
+    }
+
+    public function store(StorePandaRequest $request){
+        $data = $request->validated();
+        $panda = Panda::create($data);
+        return new PandaResource($panda);
     }
 }

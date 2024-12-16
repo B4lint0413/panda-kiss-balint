@@ -8,4 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class Panda extends Model
 {
     use HasFactory;
+
+    protected $fillable = ["name", "sex", "birth"];
 }
