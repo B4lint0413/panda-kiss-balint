@@ -1,6 +1,8 @@
 <template>
+  <header>
   <BaseHeader />
-  <main class="container mx-auto">
+  </header>
+  <main class="container-fluid mx-auto">
     <slot />
   </main>
 </template>

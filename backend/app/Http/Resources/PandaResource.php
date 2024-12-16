@@ -17,6 +17,7 @@ class PandaResource extends JsonResource
     {
         $now = Carbon::now();
         return [
+            'id' => $this->id,
             'name'=> $this->name,
             'sex' => $this->sex,
             'birth' => $this->birth,
