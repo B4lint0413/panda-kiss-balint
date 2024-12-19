@@ -1,12 +1,12 @@
 <template>
   <BaseLayout>
-    <div class="row opacity-25 bg-success my-2 g-2">
+    <div class="row opacity-25 bg-success my-2 g-2 pb-2">
       <OrderButton url="pandas?orderBy=name&order=asc" @order="showCards">Név szerint növekvő</OrderButton>
       <OrderButton url="pandas?orderBy=name&order=desc" @order="showCards">Név szerint csökkenő</OrderButton>
       <OrderButton url="pandas?orderBy=age&order=asc" @order="showCards">Kor szerint növekvő</OrderButton>
       <OrderButton url="pandas?orderBy=age&order=desc" @order="showCards">Kor szerint csökkenő</OrderButton>
     </div>
-    <div class="row gx-5">
+    <div class="row g-3">
       <BaseCard v-for="panda of pandas" :panda="panda"/>
     </div>
   </BaseLayout>
@@ -44,3 +44,9 @@ export default {
   }
 }
 </script>
+
+<route lang="json">
+  {
+      "name": "index"
+  }
+</route>

@@ -1,5 +1,7 @@
 <template>
-<button type="button" class="col-6 btn btn-success font-bold border p-2" @click="click"><slot/></button>
+    <div class="col-6">
+        <button type="button" class="w-full btn btn-success font-bold border" @click="click"><slot/></button>
+    </div>
 </template>
 
 <script>

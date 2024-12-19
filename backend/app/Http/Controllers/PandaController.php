@@ -24,17 +24,13 @@ class PandaController extends Controller
 
                 if($request->get('orderBy') == 'age'){
                     if($request->get('order') == 'desc'){
-                        $pandas = $pandas->sortBy('birth');
+                        $pandas = Panda::orderBy('birth', 'asc')->get();
                     }else if($request->get('order') == 'asc'){
-                        $pandas = $pandas->sortByDesc('birth');
+                        $pandas = Panda::orderBy('birth', 'desc')->get();
                     }
                 }
-                if($request->get('order') == 'name'){
-                    if($request->get('order') == 'desc'){
-                        $pandas = $pandas->sortByDesc('name');
-                    }else if($request->get('order') == 'asc'){
-                        $pandas = $pandas->sortBy('name');
-                    }
+                else{
+                    $pandas = Panda::orderBy($request->get('orderBy'), $request->get('order'))->get();
                 }
             }
         }
